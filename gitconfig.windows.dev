@@ -1,0 +1,35 @@
+[user]
+	name = 'Karl Zhou'
+	email = kzhou@illumina.com
+[alias]
+	tags = log --oneline --graph --decorate
+	a = -a .
+	cm = commit -m
+	cam = commit -a -m
+	show-alias = config --get-regexp alias
+	unstage = reset HEAD --
+	undo = reset HEAD^
+	s = status
+	b = branch -a
+	l = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%an%C(reset), %C(cyan)%ar%C(reset): %s' --graph --max-count=20
+	ll = log --pretty=format:'%C(yellow)%h%C(reset) %C(green)%an%C(reset), %C(cyan)%ar%C(reset): %s' --graph
+	cp = cherry-pick
+[gui]
+[push]
+	default = current
+[credential]
+	helper = !'C:\\Users\\kzhou\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+[diff]
+    tool = araxis
+	guitool = araxis
+[difftool "araxis"]
+	path = "C:/Program Files/Araxis/Araxis Merge/Compare.exe"
+[merge]
+	tool = araxis
+[mergetool "araxis"]
+	path = "C:/Program Files/Araxis/Araxis Merge/Compare.exe"
+	cmd = /merge /wait /a2 /3 "$LOCAL" "$BASE" "$REMOTE" "$MERGED"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
